@@ -1,0 +1,12 @@
+{
+  "name": "botdiscord",
+  "version": "1.0.0",
+  "description": "Discord bot by Juubi",
+  "main": "main.js",
+  "repository": "https://github.com/oepz/Bot-Discord.git",
+  "author": "oepz <48292442+oepz@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "discordjs/discord.js"
+  }
+}
