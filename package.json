@@ -7,7 +7,8 @@
   "author": "oepz <48292442+oepz@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
-    "discord.js": "discordjs/discord.js"
+    "discord.js": "discordjs/discord.js",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
@@ -28,7 +29,11 @@
         "error",
         2
       ],
-      "curly": "off"
+      "curly": "off",
+      "no-trailing-spaces": "off",
+      "eol-last": "off",
+      "padded-blocks": "off",
+      "function-paren-newline": "off"
     }
   }
 }

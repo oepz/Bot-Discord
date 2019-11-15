@@ -1,18 +1,20 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const config = require("./config");
+const { TOKEN, PREFIX } = require("./config");
 
-client.on("ready", () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
+client.PREFIX = PREFIX;
 
-client.on("message", msg => {
-  if (msg.content.startsWith(`${config.PREFIX}ping`)) {
-    msg.channel.send("Pong!");
-  }
-  if (msg.content.startsWith(`${config.PREFIX}pong`)) {
-    msg.channel.send("Ping!");
-  }
-});
+client.commands = new Discord.Collection();
+client.commands.set("say", require("./commands/say.js"));
+client.commands.set("sinfo", require("./commands/sinfo.js"));
+client.commands.set("image", require("./commands/image.js"));
 
-client.login(config.TOKEN);
+client.on("ready", () => require("./events/ready.js")(client));
+client.on("message", msg => require("./events/message.js")(client, msg));
+client.on("guildMemberAdd", member =>
+  require("./events/guildMemberAdd.js")(client, member)
+);
+
+client.login(TOKEN);
+client.on("error", console.error);
+client.on("warn", console.warn);
