@@ -36,7 +36,9 @@
       "no-trailing-spaces": "off",
       "eol-last": "off",
       "padded-blocks": "off",
-      "function-paren-newline": "off"
+      "function-paren-newline": "off",
+      "prefer-template": "off",
+      "no-eval": "off"
     }
   }
 }
