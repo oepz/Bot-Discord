@@ -1,16 +1,22 @@
 const Discord = require("discord.js");
+const { TOKEN } = require("./config");
 const client = new Discord.Client();
-const { TOKEN, PREFIX } = require("./config");
+const fs = require("fs");
 
-client.PREFIX = PREFIX;
 require("./util/functions")(client);
 client.mongoose = require("./util/mongoose");
 client.commands = new Discord.Collection();
 
-client.commands.set("say", require("./commands/say.js"));
-client.commands.set("sinfo", require("./commands/sinfo.js"));
-client.commands.set("image", require("./commands/image.js"));
-client.commands.set("eval", require("./commands/eval.js"));
+fs.readdir("./commands/", (err, files) => {
+  if (err) return console.error;
+  files.forEach(file => {
+    if (!file.endsWith(".js")) return undefined;
+    const props = require(`./commands/${file}`);
+    const cmdName = file.split(".")[0];
+    console.log(`Commande ${cmdName} chargée.`);
+    client.commands.set(cmdName, props);
+  });
+});
 
 client.on("ready", () => require("./events/ready.js")(client));
 client.on("message", msg => require("./events/message.js")(client, msg));

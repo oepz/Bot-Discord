@@ -1,4 +1,4 @@
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
   function clean(text) {
     if (typeof text === "string")
       return text
@@ -12,4 +12,8 @@ module.exports = async (client, message, args) => {
   const evaled = await eval(code);
   const cleanCode = await clean(evaled);
   message.channel.send(cleanCode, { code: "js" });
+};
+
+exports.help = {
+  name: "eval"
 };

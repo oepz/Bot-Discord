@@ -1,8 +1,8 @@
-module.exports = (client, guild) => {
+module.exports = async (client, guild) => {
   const newGuild = {
     guildID: guild.id,
     guildName: guild.name
   };
 
-  client.createGuild(newGuild);
+  await client.createGuild(newGuild);
 };

@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 
-module.exports = (client, message) => {
+exports.run = (client, message) => {
   if (!message.guild) return;
   if (message.deletable) message.delete();
 
@@ -13,4 +13,8 @@ module.exports = (client, message) => {
     .setImage(message.guild.iconURL())
     .setTimestamp();
   message.channel.send(sembed);
+};
+
+exports.help = {
+  name: "sinfo"
 };

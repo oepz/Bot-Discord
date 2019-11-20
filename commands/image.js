@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 const Discord = require("discord.js");
 
-module.exports = async (client, message, args) => {
+exports.run = async (client, message, args) => {
   if (message.deletable) message.delete();
 
   if (args[0] === "cat") {
@@ -36,4 +36,8 @@ module.exports = async (client, message, args) => {
       "```fix\nImages Disponibles :``` \n```css\nChien (.image dog)\nChat (.image cat)\nRenard (.image fox)```"
     );
   }
+};
+
+exports.help = {
+  name: "image"
 };
