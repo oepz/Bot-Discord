@@ -1,5 +1,5 @@
 module.exports = {
-  TOKEN: "NjM3Nzc2ODg2MzQ0NDUwMDY4.XdGpIw.t4AHls6itjPW3nEkKRZHkQzKupA",
+  TOKEN: "NjM3Nzc2ODg2MzQ0NDUwMDY4.XdWZoA.uFU3XuGzo73LuntQ9tMG8Cp1fp8",
   PREFIX: ".",
   DBCONNECTION: "mongodb://localhost:27017/testOfficiel",
   DEFAULTSETTINGS: {
