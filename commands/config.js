@@ -1,4 +1,6 @@
 exports.run = async (client, message, args, settings) => {
+  
+  if (!message.guild) return;
   if (message.deletable) message.delete();
   if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("Tu n'as pas les permissions requises.");
   

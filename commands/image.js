@@ -2,6 +2,8 @@ const fetch = require("node-fetch");
 const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
+
+  if (!message.guild) return;
   if (message.deletable) message.delete();
 
   if (args[0] === "cat") {
