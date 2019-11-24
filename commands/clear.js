@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, settings) => {
 
   if (!message.guild) return;
   if (message.deletable) message.delete();
@@ -19,10 +19,9 @@ exports.run = async (client, message, args) => {
     .addField("A supprimé :", count + "messages.")
     .setTimestamp();
 
-  const incidentchannel = message.guild.channels.find("id", "605813639433158666");
-  if (!incidentchannel) return message.channel.send("Je ne trouve pas le channel dédié...");
+  if (!settings.LogsChannel) return message.channel.send("Je ne trouve pas le channel dédié...");
 
-  incidentchannel.send(logsembed);
+  settings.LogsChannel.send(logsembed);
 };
 
 exports.help = {

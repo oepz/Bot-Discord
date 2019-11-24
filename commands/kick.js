@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-exports.run = async (bot, message, args) => {
+exports.run = async (bot, message, args, settings) => {
 
   if (!message.guild) return;
   if (message.deletable) message.delete();
@@ -28,10 +28,9 @@ exports.run = async (bot, message, args) => {
     .addField("Raison :", kReason)
     .setTimestamp();
 
-  const incidentchannel = message.guild.channels.find("id", "605813639433158666");
-  if (!incidentchannel) return message.channel.send("Je ne trouve pas le channel dédié...");
+  if (!settings.LogsChannel) return message.channel.send("Je ne trouve pas le channel dédié...");
 
-  incidentchannel.send(logsembed);
+  settings.LogsChannel.send(logsembed);
   message.channel.send(kickEmbed);
   kUser.createDM().then(channel => {
     channel.send(kickEmbed);

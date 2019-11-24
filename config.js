@@ -6,6 +6,7 @@ module.exports = {
     prefix: ".",
     welcomeChannel: "Bienvenue",
     welcomeMessage: "Bienvenue {{user}} !",
+    LogsChannel: "logs-sao",
     force: 0,
     defense: 0,
     vitesse: 0,
