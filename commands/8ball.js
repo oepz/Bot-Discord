@@ -10,11 +10,13 @@ exports.run = async (client, message, args) => {
   const question = args.slice(0).join(" ");
 
   const ball_embed = new Discord.MessageEmbed()
+
     .setAuthor(message.author.tag)
     .setColor("#ffffff")
     .addField("Question:", question)
     .addField("Réponse:", rep[reptaille])
     .setThumbnail(message.author.displayAvatarURL);
+    
   message.channel.send(ball_embed);
 };
 
