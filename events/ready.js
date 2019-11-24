@@ -1,5 +1,5 @@
-module.exports = () => {
+module.exports = client => {
 
-  console.log("Je suis prêt !");
+  console.log(`${client.tag} est prêt !`);
 
 };
