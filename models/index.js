@@ -1,4 +1,4 @@
 module.exports = {
   Guild: require("./guild"),
-  user: require("./user")
+  User: require("./user")
 };

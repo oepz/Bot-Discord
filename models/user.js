@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
-const { DEFAULTSETTINGS: defaults } = require("../config");
+const { USERDEFAULTSETTINGS: defaults } = require("../config");
 
 const userSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  ID: String,
-  Name: String,
+  GuildID: String,
+  userID: String,
+  userName: String,
   force: {
     "type": String,
     "default": defaults.force

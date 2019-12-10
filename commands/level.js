@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+/* const Discord = require("discord.js");
 const xp = require("../json/xp.json");
 
 exports.run = async (client, message) => {
@@ -29,4 +29,4 @@ exports.run = async (client, message) => {
 
 exports.help = {
   name: "level"
-};
+}; */

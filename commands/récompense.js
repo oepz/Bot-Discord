@@ -1,4 +1,4 @@
-const xp = require("../json/xp.json");
+/* const xp = require("../json/xp.json");
 const fs = require("fs");
 
 
@@ -11,13 +11,6 @@ exports.run = async (bot, message, args) => {
   // eslint-disable-next-line no-mixed-operators
   const xpAdd = Math.floor(Math.random() * countxp) + countxp / 2;
   console.log(xpAdd);
-
-  if (!xp[message.author.id + message.guild.id]) {
-    xp[message.author.id + message.guild.id] = {
-      xp: 0,
-      level: 1
-    };
-  }
 
   const curxp = xp[message.author.id + message.guild.id].xp;
   const curlvl = xp[message.author.id + message.guild.id].level;
@@ -37,4 +30,4 @@ exports.run = async (bot, message, args) => {
 
 exports.help = {
   name: "récompense"
-};
+};*/
